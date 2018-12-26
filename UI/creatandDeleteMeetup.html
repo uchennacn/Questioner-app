@@ -22,7 +22,6 @@
 
 <body>
 
-
     <div class="wrapper">
         <!--Header Begins Here-->
         <div class="header container ">
@@ -48,48 +47,26 @@
         <!--Main content start here-->
         <div class="container align-content-center main-content pd-xs-t-50 flex-wrap ">
 
-            <!--Sign in panel-->
-            <div class="container panel center-box-vertical br-regular col-xs-11 col-sm-11 col-md-6 col-lg-6 col-xl-4 shadow-dim   mg-l-10 mg-r-10 mg-xs-b-10 mg-sm-b-10 mg-md-b-10 mg-lg-b-10  flex-wrap ">
-                <div class="mg-10 panel-top-text container col-12">
-                    <p class="lead">
-                        Sign In
-                    </p>
-                </div>
-
-                <div class=" mg-10 container col-12 cred-input flex-wrap">
-                    <input id="email-input" name="email" class="col-12" type="email" placeholder="Email" />
-
-                    <input id="password-input" name="password" class="col-12 mg-t-10" type="password" placeholder="Password" />
-                </div>
-
-                <div class=" mg-10 col-12">
-
-                    <Button id="login-button" class="btn-lg float-right">Sign In</Button>
-
-                </div>
-
-            </div>
-
             <!--Sign up panel-->
             <div class="container panel center-box-vertical br-regular col-xs-11 col-sm-11 col-md-6 col-lg-6 col-xl-4 shadow-dim  flex-wrap">
 
                 <div class="mg-10 panel-top-text container col-12">
                     <p class="lead">
-                        Create an account
+                        Create a Meetup
                     </p>
                 </div>
 
                 <div class=" mg-10 container col-12 cred-input flex-wrap">
-                    <input id="sign-up-name" name="name" class="col-12 " type="text" placeholder="Name" />
+                    <input id="meet-up-name" name="meetuptitle" class="col-12 " type="text" placeholder="Title" />
 
-                    <input id="sign-up-email" name="email" class="col-12 mg-t-10" type="email" placeholder="Email" />
+                    <input id="meet-up-date" name="date" class="col-12 mg-t-10" type="date" placeholder="Date" />
 
-                    <input id="sign-up-password" name="password" class="col-12 mg-t-10" type="password" placeholder="Password" />
+                    <input id="meet-up-venue" name="venue" class="col-12 mg-t-10" type="text" placeholder="Venue" />
                 </div>
 
                 <div class=" mg-10 col-12">
 
-                    <Button id="sign-up-button" class="btn-lg float-right">Sign Up</Button>
+                    <Button id="meet-up-button" class="btn-lg float-right">Create</Button>
 
                 </div>
 
@@ -97,18 +74,32 @@
             </div>
 
 
-    <div class="wrapper">
-        <!--Header Begins Here-->
-        <div class="header container ">
-            <div class="header-content align-content-center col container">
-                <div class="container col-4 ">
-                    <a class=" hide center-box-vertical"><img src="../images/icons/outline-menu-white-18/2x/outline_menu_white_18dp.png" /></a>
+            <!--Sign in panel-->
+            <div class="container panel center-box-vertical br-regular col-xs-11 col-sm-11 col-md-6 col-lg-6 col-xl-4 shadow-dim   mg-l-10 mg-r-10 mg-xs-b-10 mg-sm-b-10 mg-md-b-10 mg-lg-b-10  flex-wrap ">
+                <div class="mg-10 panel-top-text container col-12">
+                    <p class="lead">
+                        Delete Meetup
+                    </p>
                 </div>
 
+                <div class=" mg-10 container col-12 cred-input flex-wrap">
+                    <input id="meet-up-name" name="meetuptitle" class="col-12" type="text" placeholder="Title" />
+
+                    <input id="meet-up-date" name="date" class="col-12 mg-t-10" type="date" placeholder="Date" />
+                </div>
+
+                <div class=" mg-10 col-12">
+
+                    <Button id="delete-button" class="btn-lg float-right">Delete</Button>
+
+                </div>
+
+            </div>
+
+            
 
 
         </div>
-
 
 
       <!--   <div id="cont">
@@ -120,12 +111,12 @@
 
     </div>
 
-
     <script src="../javascripts/api.js">
     </script>
 
     <script src="../javascripts/components.js">
     </script>
+    
 
     <script>
         let emailInput = document.getElementById('email-input');
