@@ -45,7 +45,7 @@
         <!--Header Ends Here-->
 
         <!--Main content start here-->
-        
+         <div class="container align-content-center main-content pd-xs-t-50 flex-wrap ">
 
             <!--Sign up panel-->
             <div class="container panel center-box-vertical br-regular col-xs-11 col-sm-11 col-md-6 col-lg-6 col-xl-4 shadow-dim  flex-wrap">
@@ -79,6 +79,80 @@
         <!--Main content ends here-->
 
     </div>
+
+    <script src="../javascripts/api.js">
+    </script>
+
+    <script src="../javascripts/components.js">
+    </script>
+
+    <script>
+        let emailInput = document.getElementById('email-input');
+        let signUpNameInput = document.getElementById('sign-up-name');
+        let signUpEmailInput = document.getElementById('sign-up-email');
+        let signUpPasswordInput = document.getElementById('sign-up-password');
+        let passwordInput = document.getElementById('password-input');
+        let loginButton = document.getElementById('login-button');
+        let signUpButton = document.getElementById('sign-up-button');
+
+        let contElement = document.getElementById('cont');
+        let pTag = document.createElement('p');
+        pTag.innerHTML='Hey';
+        contElement.appendChild(pTag);
+
+
+
+        click(loginButton, () => {
+
+            let email = emailInput.value;
+            let password = passwordInput.value;
+
+            const data = {
+                email,
+                password
+            };
+
+            login(data, (response) => {
+                if (response === 0) {
+                    alert('Login Error');
+                    return;
+                }
+
+                alert(response.data.msg);
+                if (typeof response.data.userId !== 'undefined') {
+                    window.location.href = `/u/${response.data.userId}`;
+                }
+
+            });
+        });
+
+        click(signUpButton, () => {
+            let name = signUpNameInput.value;
+            let email = signUpEmailInput.value;
+            let password = signUpPasswordInput.value;
+
+            let data = {
+                name,
+                email,
+                password,
+            }
+            
+            signUp(data, (response) => {
+                 if (response === 0) {
+                    alert('Sign up Error');
+                    return;
+                }
+
+                alert(response.data.msg);
+                if (typeof response.data.userId !== 'undefined') {
+                    window.location.href = `/u/${response.data.userId}`;
+                }
+            });
+            
+        });
+
+    </script>
+
 </body>
 </html>
 
